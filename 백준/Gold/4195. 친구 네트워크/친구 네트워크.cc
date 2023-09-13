@@ -19,9 +19,7 @@ int main(void)
 	while (T--)
 	{
 		std::cin >> F;
-		int parent[F + 1];
 		int i = 0;
-		int num = 1;
 		while (i < F)
 		{
 			std::string friend1, friend2;
