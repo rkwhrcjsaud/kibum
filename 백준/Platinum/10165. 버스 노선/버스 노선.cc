@@ -4,7 +4,7 @@
 
 int N, M;
 std::vector < std::pair <int, std::pair<int, int> > > v;
-bool flag[500001];
+bool flag[500020];
 
 int compare(std::pair <int, std::pair<int, int> > a, std::pair <int, std::pair<int, int> > b)
 {
@@ -18,18 +18,20 @@ int main(void)
     std::ios::sync_with_stdio(false);
     std::cin.tie(NULL);
     std::cin >> N >> M;
+    int last = 0;
     for (int i = 0; i < M; i++)
     {
         int s, e;
         std::cin >> s >> e;
         if (s > e)
             e += N;
+        last = std::max(last, e);
         v.push_back(std::make_pair(i + 1, std::make_pair(s, e)));
     }
     std::sort(v.begin(), v.end(), compare);
     int start = v[0].second.first;
     int end = v[0].second.second;
-    int last = v.back().second.second - N;
+    last -= N;
     if (end > last)
         flag[v[0].first] = true;
     for (int i = 1; i < M; i++)
