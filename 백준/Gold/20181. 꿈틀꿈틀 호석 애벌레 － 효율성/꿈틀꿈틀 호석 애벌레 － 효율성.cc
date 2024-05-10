@@ -4,9 +4,10 @@
 #include <algorithm>
 #include <cstring>
 
-int N, K, sum;
-int arr[100001];
-int dp[100001];
+typedef long long ll;
+ll N, K, sum;
+ll arr[100001];
+ll dp[100001];
 
 int main(void)
 {
